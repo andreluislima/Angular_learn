@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+}
+
+h1{
+    color: rgb(51, 53, 19);
+    font-size: 30pt;
+}
+h2{
+    color: rgb(34, 47, 238);
+    font-size: 30pt;
+}
+
+.container{
+    border: 2px rgb(228, 222, 222) solid;
+    background-color: rgb(167, 231, 94);
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+div{
+    border: 2px rgb(19, 19, 19) dashed;
+    background-color: rgb(223, 224, 220);
+
+    width: 7%;
+    height: 40%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    padding: 15px;
+}
+
+button{
+    height: 60px;
+    background-color: rgb(167, 231, 94);
+    font-size: 15pt;
+}
+
+button:hover{
+    background-color: white;
+}
