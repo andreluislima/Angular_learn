@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContadorComponent implements OnInit {
 
-  public numero = 1322;
+  public numero = 0;
   constructor() { }
 
   ngOnInit(): void {
