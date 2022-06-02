@@ -16,3 +16,4 @@ export class ClickMeComponent implements OnInit {
     alert("Recebi um click!");
   }
 }
+
