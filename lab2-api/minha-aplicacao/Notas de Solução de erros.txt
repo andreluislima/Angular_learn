@@ -1,0 +1,9 @@
+correção TS2345: Argument of type 'NgForm' is not assignable to parameter of type 'FormGroup':
+
+ vá no tsconfig.json:
+
+
+  mude o strict templates para false.
+
+ "angularCompilerOptions": { 
+        "strictTemplates": false
