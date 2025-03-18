@@ -1,0 +1,25 @@
+<h2>Event Binding</h2>
+
+<div>
+    <p>Idade: {{age}}</p>
+
+    <button (click)="sum()">+</button>
+    <button (click)="sub()">-</button>
+</div>
+
+<hr>
+<h3>Class and Style Binding</h3>
+<div>
+    
+    <p [class.background-red]="age > 13" [class.background-blue]="age <=13" [class.background-yellow]="age <=0">
+        {{name}}
+    </p>
+</div>
+
+<!-- <div style="background-color: red; width: 300px; height: 300px; margin-top: 20px;"
+(mousemove)="onMouseMove($event)"
+></div> -->
+<div 
+  style="background-color: red; width: 300px; height: 300px; margin-top: 20px;"
+  (mousemove)="onMouseMove($event)"
+></div>
