@@ -1,9 +1,52 @@
 <div>
-    <h2>IF</h2>
-    1 é igual a 1?
-    @if(1 == 1){
-        Sim
-    }@else {
-        Não
-    }
+    <h2>FOR</h2>
+    <ul>
+        <li *ngFor="let nome of nomes">{{ nome }}</li>
+    </ul>
+
+    <ng-container
+        *ngFor="
+            let item of itens;
+            let i = index;
+            let c = count;
+            let f = first;
+            let l = last;
+            let e = even;
+            let o = odd;
+
+            trackBy:trackByFn
+        "
+    >
+        <p>{{item.name}}</p>
+        <p>index - {{i}} - Posição do Elemento no Array</p> 
+        <p>count - {{c}} - Quantidade de elementos no Array</p>
+        <p>first - {{f}} - Verifica se é o primeiro item do array</p>
+        <p>last - {{l}} - Verifica se é o útlimo item do array</p>
+        <p>even - {{e}} - Verifica se o elemento é par</p>
+        <p>odd - {{o}} - Verifica se o elemento é impar</p>
+
+    </ng-container>
+
+    <input type="text" #name>
+    <button (click)="addNewName(name.value)">Add Name</button>
+
+    <ul>
+        Verificação de valores num Array
+        @for(item of estante; track item.nome){
+            <li>{{item.nome}}</li>
+        }@empty {
+            <li>Não contém valores</li>
+        }
+    </ul>
+
+    <!-- Forma Antiga -->
+    <!-- <ul>
+        <ng-container *ngIf="estante.length === 0; eslse itensExist">
+            <li>Não contém valores</li>
+        </ng-container>
+        <ng-container #itensExist>
+            <ng-container *ngFor="let item of itens"></ng-container>
+        </ng-container>
+    </ul> -->
+
 </div>
