@@ -1,0 +1,77 @@
+<div class="p-3">
+    
+    <div>
+        <h2>ON - INTERACTION</h2>
+        <p>Renderiza o conteúdo somente após interação do usuário</p>
+
+            @defer(on interaction){
+                <p>Este conteúdo apareceu após a intereção</p>
+            }@placeholder{
+                <p style="text-decoration: underline; color: blue;">Clique ou interaja para carregar o conteudo</p>
+            }
+    </div>
+
+    <div>
+        <h2>WHEN CONDITION</h2>
+        <p> Renderiza o componente quando uma condição for true</p>
+
+        <button (click)="login()">Entrar</button>
+        
+            @defer(when isUserLoggedIn){
+                <p>Bem vindo ao sistema!</p>
+            } 
+
+    </div>
+
+    <div>
+        <h2>ON IDLE</h2>
+        <p>  Carrega o conteúdo quando o navegador estiver ocioso</p>
+
+         @defer(on idle){
+            <p style="background-color: red; color: white;">Este conteúdo foi carregado quando o navegador ficou ocioso</p>
+         }
+
+    </div>
+
+    <div>
+        <h2>TIMER</h2>
+        <p> Renderiza após um tempo determinado</p>
+        <p>Ex: 5 segundos</p>
+
+         @defer(on timer (5000ms)){
+            <p style="background-color: blue; color: white;">Este conteúdo foi carregado após 5 segundos</p>
+         }
+
+    </div>
+
+    <div>
+        <h2>ON VIEWPORT</h2>
+        <p> Renderiza após um tempo determinado</p>
+        <div style="height: 50vh; background: lightgray;">
+            Role para baixo para ver o conteúdo carregado na viewport 👇
+        </div>
+
+         @defer(on viewport){
+            <p>Agora que voce rolou a pagina o conteudo foi carregado!</p>
+         }@placeholder{
+            <p>Rolando para carregar o conteúdo</p>
+         }  
+
+    </div>
+
+    <div>
+        <h2>ERROR</h2>
+        @defer (on viewport) {
+            <p>O conteúdo foi carregado com sucesso!</p>
+          } @placeholder {
+            <p>Rolando para carregar conteúdo...</p>
+          } @loading {
+            <p>Carregando...</p>
+          } @error {
+            <p>Erro ao carregar o conteúdo. Por favor, tente novamente.</p>
+          }
+          
+    </div>
+
+
+</div>
