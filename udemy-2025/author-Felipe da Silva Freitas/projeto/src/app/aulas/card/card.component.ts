@@ -1,12 +1,23 @@
 import { Component } from '@angular/core';
 import { CardBtnComponent } from "../card-btn/card-btn.component";
+import { CardBtnCancelComponent } from "../card-btn-cancel/card-btn-cancel.component";
+
+interface ICurso{
+  infos:Iinfos;
+}
+
+interface Iinfos{
+  tipo:string,
+  preco:number
+}
 
 @Component({
   selector: 'app-card',
-  imports: [CardBtnComponent],
+  imports: [CardBtnComponent, CardBtnCancelComponent],
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss'
 })
+
 export class CardsComponent {
 
   // tipo = 'Plano';
@@ -33,5 +44,20 @@ export class CardsComponent {
         preco:100
       }
     };
+
+    // Ignora a propriedade ser undefined
+    // @ts-ignore 
+    servico:any = {
+      infos:undefined,
+    };
+
+    curso:ICurso = {
+      infos:{
+        tipo:'simples',
+        preco:100
+      }
+    }
+
+  
 
 }
