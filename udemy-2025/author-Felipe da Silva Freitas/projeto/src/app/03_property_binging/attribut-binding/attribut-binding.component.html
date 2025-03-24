@@ -1,0 +1,24 @@
+<section style="border: 2px solid; background-color: aliceblue; width: 50%; padding: 20px;">
+    <div class="">
+        <h1>Atributte Binding</h1>
+        
+        <p>
+            []  - Atributos 
+            Enviar um valor para uma propriedade
+            Ex: [type]="inputType"
+        </p>
+       
+  
+    </div>
+    
+    <div class="mt-3">
+        <button [attr.title]="buttonTitle">Teste</button>
+        <br>
+        <button [attr.disable]="buttonDisable ? true : null">Disable</button>
+        <br>
+        <button (click)="onButtonClick()">Mudar Props</button>
+
+    </div>
+
+    
+</section>
