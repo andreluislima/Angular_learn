@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-attribut-binding',
   imports: [],
+  standalone:true,
   templateUrl: './attribut-binding.component.html',
   styleUrl: './attribut-binding.component.scss'
 })

@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-prop-binding',
   imports: [],
+  standalone:true,
   templateUrl: './prop-binding.component.html',
   styleUrl: './prop-binding.component.scss'
 })
