@@ -13,9 +13,10 @@
     
     <div class="mt-3">
         <button [attr.title]="buttonTitle">Teste</button>
-        <br>
-        <button [attr.disable]="buttonDisable ? true : null">Disable</button>
-        <br>
+        <button [title]="buttonTitle">Teste</button>
+        
+        <button [attr.disabled]="buttonDisable ? true : null">Disabled</button>
+        
         <button (click)="onButtonClick()">Mudar Props</button>
 
     </div>
