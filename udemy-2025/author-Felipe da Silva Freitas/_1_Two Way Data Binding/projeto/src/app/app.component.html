@@ -1,0 +1,33 @@
+<h1>TWO AWAY DATA BINDING</h1>
+<hr>
+
+<div class="cards-container">
+    <!-- #1 - Forma
+    Nessa forma os processos de input e output são feitos ao mesmo tempo. -->
+
+    <h3>Nome:</h3>
+ 
+    <input type="text" 
+       [(ngModel)]="name"
+    >
+
+    <h3>Nome digitado: {{name}}</h3>
+</div>
+
+<!-- <div class="cards-container">
+    #1 - Forma
+    Nessa forma os processos de input e output são feitos de modo separado.
+    <h3>Nome:</h3>
+      
+      [] - input
+      () - output 
+     
+    <input type="text" 
+        [ngModel]="name" <-- Input
+        (ngModelChange)="handleInputChange($event)" <-- Output
+    >
+
+    <h3>Nome digitado: {{name}}</h3>
+</div> -->
+
+<router-outlet />
