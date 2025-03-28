@@ -1,8 +1,18 @@
+<h1>NG IF</h1>
+<hr>
 
-<div class="cards-container">
-    <app-card></app-card>
-    <app-card-roxo></app-card-roxo>
+<div class="cards-container bg">
+    <div class="p-3 mt-3 mb-3 rounded-3" style="background-color: green; color:#fff"
+        *ngIf="minhaProp"
+
+    >Sou uma Div!</div>
+
+    <button class="btn btn-primary" (click)="toggleProp()">Toggle</button>
+    
 </div>
+ 
+ <hr>
 
-
-<router-outlet />
+ 
+ 
+ 
