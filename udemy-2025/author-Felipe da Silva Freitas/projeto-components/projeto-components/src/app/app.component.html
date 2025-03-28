@@ -1,18 +1,40 @@
 
 <div class="cards-container">
 
+   <!-- Tarefa: 
+      Passe os valores de modo dinamico no app.comp.ts -->
+
 <app-card
     [type]="'Simples'" 
     [price]="100"
     [style]="'orange'"
+    (btnClicked)="onCardbuttonClicked()"
  > </app-card>
  
  <app-card
     [type]="'Completo'" 
     [price]="100"
     [style]="'purple'"
+    (btnClicked)="onCardbuttonClicked()"
+
  > </app-card>
 </div>
 
+
+<div class="mt-5 p-5 w-50 bg bg-success text-white rounded-2 mx-5">
+   <div>
+      <h2>Parabéns!</h2>
+   </div>
+   <p>Quero te parabenizar por ter chegado até aqui, agora você já tem noção das principais funcionalidades para criar componentes reutilizáveis. De agora em diante os seus projetos terão uma qualidade muito superior!</p>
+
+   <p>
+      Sempre procure ter a mentalidade de criar uma funcionalidade que no futuro, outra pessoa poderá dar manutenção com o mínimo de esforço possível, essa mentalidade vai te "forçar" a pensar mais na forma em que você cria uma solução.
+   </p>
+
+   <p>
+      Mas lembre-se, nenhuma solução será perfeita, e está tudo certo. O importante é ter a mentalidade de querer criar um projeto bem estruturado, com um código limpo e com soluções de fácil manutenção.
+   </p>
+
+</div>
 
  

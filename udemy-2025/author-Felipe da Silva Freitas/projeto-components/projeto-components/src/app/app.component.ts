@@ -10,7 +10,9 @@ import { CardComponent } from "./components/card/card.component";
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  buttonClicked(){
-    alert('Foi');
+ 
+  onCardbuttonClicked(){
+    console.log('onCardButtonClicked');
   }
+
 }
