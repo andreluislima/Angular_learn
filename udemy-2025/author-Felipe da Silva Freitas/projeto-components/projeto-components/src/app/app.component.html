@@ -1,12 +1,18 @@
-<app-button
-    [text]="'Adquirir'"  [disabled]="true" (clicked)="buttonClicked()"
-    [style]="'white'"
-></app-button>
 
-<app-button
-    [text]="'Adquirir2'"
+<div class="cards-container">
+
+<app-card
+    [type]="'Simples'" 
+    [price]="100"
+    [style]="'orange'"
+ > </app-card>
+ 
+ <app-card
+    [type]="'Completo'" 
+    [price]="100"
     [style]="'purple'"
-></app-button>
+ > </app-card>
+</div>
 
 
-<router-outlet />
+ 
