@@ -1,0 +1,35 @@
+ <h1>PIPES</h1>
+ <p>Link da Documentação:
+  <a href="https://angular.dev/guide/templates/pipes"></a> 
+ </p>
+
+ <div class="p-3">
+    <span class="d-block">Sem o pipe</span>
+     <h2>{{text.toUpperCase()}}</h2>
+ </div>
+
+ 
+ <div class="p-3">
+    <span class="d-block">Com o pipe</span>
+    <h2>{{text | uppercase}}</h2>
+    <p>{{pessoa | json}}</p>
+ </div>
+
+ <hr>
+
+    <p>Criando Pipe</p>
+    
+  <h2
+    [class]="pessoa.status | statusClass"
+  >{{pessoa.name}}</h2>
+
+   
+  <h2
+    [class]="pessoa2.status | statusClass"
+  >{{pessoa.name}}</h2>
+
+ 
+   <h2
+   [class]="pessoa3.status | statusClass"
+   >{{pessoa.name}}</h2>
+
