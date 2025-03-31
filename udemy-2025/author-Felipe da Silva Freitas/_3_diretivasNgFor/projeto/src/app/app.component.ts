@@ -1,14 +1,26 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { CardsComponent } from './aulas/card/card.component';
-import { CardRoxoComponent } from "./aulas/card-roxo/card-roxo.component";
-
+   
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CardsComponent, CardRoxoComponent],
+  imports: [CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'projeto';
-}
+  
+   pessoaIndexSelected: number | undefined;
+
+   listPessoas = [
+    
+    {name:'André Lima', idade:35},
+    {name:'Claudio Oliveira', idade:35},
+    {name:'José Bonifácio', idade:72},
+
+   ];
+
+   selecetPessoa(index:number){
+    console.log(index)
+    this.pessoaIndexSelected = index;
+   }
+  }
