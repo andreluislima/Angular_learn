@@ -100,13 +100,13 @@ export const UsersList: IUser[] = [
         idade: 35,
         endereco: {
             rua: "Boulevard Central",
-            numero: 60,
+            numero: 41,
             cidade: "Recife",
             estado: "PE",
             pais: "Brasil"
         },
         telefone: "81919202122",
-        ativo: true,
+        ativo: null,
         funcao: "Diretor",
         dataCadastro: "2023-08-20T09:00:00.000Z",
         status: {

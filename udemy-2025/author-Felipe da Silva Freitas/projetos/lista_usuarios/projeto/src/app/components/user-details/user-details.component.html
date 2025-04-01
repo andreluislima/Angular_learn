@@ -17,15 +17,16 @@
         </mat-list-item>
 
         <mat-list-item>
-            <span class="h5">Telefone:</span> <span class="h6">{{user.telefone}}</span>
+            <span class="h5">Telefone:</span> <span class="h6">{{user.telefone | phone}}</span>
         </mat-list-item>
 
         <mat-list-item>
-            <span class="h5">Endereço:</span> <span class="h6">{{user.endereco?.rua}}, {{user.endereco?.numero}}, {{user.endereco?.cidade}} - {{user.endereco?.estado}}</span>
+            <!-- <span class="h5">Endereço:</span> <span class="h6">{{user.endereco?.rua}}, {{user.endereco?.numero}}, {{user.endereco?.cidade}} - {{user.endereco?.estado}}</span> -->
+            <span class="h5">Endereço:</span> <span class="h6">{{user.endereco | address}}</span>
         </mat-list-item>
 
         <mat-list-item>
-            <span class="h5">Ativo:</span> <span class="h6">{{user.ativo}}</span>
+            <span class="h5">Ativo:</span> <span class="h6">{{user.ativo | status}}</span>
         </mat-list-item>
       
         <mat-list-item>
