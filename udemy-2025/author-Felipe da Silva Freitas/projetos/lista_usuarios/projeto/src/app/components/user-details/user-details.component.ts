@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import {MatListModule} from '@angular/material/list';
 import {MatDividerModule} from '@angular/material/divider';
+import { IUser } from '../../interfaces/user/user.interface';
 
 @Component({
   selector: 'app-user-details',
@@ -10,4 +11,7 @@ import {MatDividerModule} from '@angular/material/divider';
 })
 export class UserDetailsComponent {
 
+  @Input({required:true}) user: IUser = {} as IUser;
+
+  
 }

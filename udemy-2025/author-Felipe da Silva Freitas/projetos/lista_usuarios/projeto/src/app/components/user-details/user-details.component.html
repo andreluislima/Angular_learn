@@ -8,32 +8,32 @@
         <mat-divider></mat-divider>
     
         <mat-list-item>
-            <span class="h5">Nome:</span> <span class="h6">Ana</span>
+            <span class="h5">Nome:</span> <span class="h6">{{user.nome}}</span>
         </mat-list-item>
 
         <mat-list-item>
-            <span class="h5">Email:</span>   <span class="h6">ana&#64;gmail.com</span>
+            <span class="h5">Email:</span>   <span class="h6">{{user.email}}</span>
 
         </mat-list-item>
 
         <mat-list-item>
-            <span class="h5">Telefone:</span> <span class="h6">(11)9999-1243</span>
+            <span class="h5">Telefone:</span> <span class="h6">{{user.telefone}}</span>
         </mat-list-item>
 
         <mat-list-item>
-            <span class="h5">Endereço:</span> <span class="h6">Rua das Flores 321- Barra Paraiso - RJ</span>
+            <span class="h5">Endereço:</span> <span class="h6">{{user.endereco?.rua}}, {{user.endereco?.numero}}, {{user.endereco?.cidade}} - {{user.endereco?.estado}}</span>
         </mat-list-item>
 
         <mat-list-item>
-            <span class="h5">Ativo:</span> <span class="h6">Sim</span>
+            <span class="h5">Ativo:</span> <span class="h6">{{user.ativo}}</span>
         </mat-list-item>
       
         <mat-list-item>
-            <span class="h5">Função:</span> <span class="h6">Desenvolvedor</span>
+            <span class="h5">Função:</span> <span class="h6">{{user.funcao}}</span>
         </mat-list-item>
 
         <mat-list-item>
-            <span class="h5">Data de Cadastro:</span> <span class="h6">20/12/2024</span>
+            <span class="h5">Data de Cadastro:</span> <span class="h6">{{user.dataCadastro}}</span>
         </mat-list-item>
       </mat-list>
       
