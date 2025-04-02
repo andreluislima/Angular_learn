@@ -2,10 +2,13 @@ import { Component } from '@angular/core';
 import {MatTableModule} from '@angular/material/table';
 import { IUser } from '../../interfaces/user/user.interface';
 import { UsersList } from '../../data/users-list';
+import { StatusPipe } from "../../pipes/status.pipe";
+import { CurrencyPipe, DatePipe } from '@angular/common';
+import { DashIfEmptyPipe } from "../../pipes/dash-if-empty.pipe";
 
 @Component({
   selector: 'app-users-list',
-  imports: [MatTableModule],
+  imports: [MatTableModule, StatusPipe, DatePipe, DashIfEmptyPipe],
   templateUrl: './users-list.component.html',
   styleUrl: './users-list.component.scss'
 })
