@@ -8,16 +8,16 @@
         <mat-divider></mat-divider>
     
         <mat-list-item>
-            <span class="h5">Nome:</span> <span class="h6">{{user.nome}}</span>
+            <span class="h5">Nome:</span> <span class="h6">{{user.nome | dashIfEmpty}}</span>
         </mat-list-item>
 
         <mat-list-item>
-            <span class="h5">Email:</span>   <span class="h6">{{user.email}}</span>
+            <span class="h5">Email:</span>   <span class="h6">{{user.email | dashIfEmpty}}</span>
 
         </mat-list-item>
 
         <mat-list-item>
-            <span class="h5">Telefone:</span> <span class="h6">{{user.telefone | phone}}</span>
+            <span class="h5">Telefone:</span> <span class="h6">{{user.telefone | phone | dashIfEmpty}}</span>
         </mat-list-item>
 
         <mat-list-item>

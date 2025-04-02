@@ -12,5 +12,9 @@ import { UsersList } from './data/users-list';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-   userSelected:IUser = UsersList[4];
+   userSelected:IUser = {} as IUser; // Preve que o objeto pode vir vazio.
+
+   onUserSelected(user: IUser){
+    this.userSelected = user;
+   }
 }
