@@ -3,15 +3,15 @@
          <div class="form__name">
             <mat-form-field>
                 <mat-label>Nome:</mat-label>
-                <input matInput  placeholder="Nome">
+                <input matInput  placeholder="Nome" name="name" [(ngModel)]="filterOpions.name">
             </mat-form-field>
          </div>
 
          <mat-form-field>
             <mat-label>Enter a date range</mat-label>
             <mat-date-range-input [rangePicker]="picker">
-              <input matStartDate placeholder="Start date">
-              <input matEndDate placeholder="End date">
+              <input matStartDate placeholder="Start date" name="date" [(ngModel)]="filterOpions.startDate" (ngModelChange)="dateSelected($event)">
+              <input matEndDate placeholder="End date" name="date" [(ngModel)]="filterOpions.endDate">
             </mat-date-range-input>
             <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
             <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
@@ -21,17 +21,17 @@
 
          <div class="form__status">
             <mat-form-field>
-                <mat-label>Favorite food</mat-label>
-                <mat-select>
-                  @for (food of foods; track food) {
-                    <mat-option [value]="food.value">{{food.viewValue}}</mat-option>
+                <mat-label>Status</mat-label>
+                <mat-select name="name" [(ngModel)]="filterOpions.status">
+                  @for (status of statusList; track status.value) {
+                    <mat-option [value]="status.value">{{status.description}}</mat-option>
                   }
                 </mat-select>
               </mat-form-field>
          </div>
 
          <div class="form__button">
-            <button mat-raised-button>Basic</button>
+            <button class="btn btn-primary" (click)="onFilter()">Filtrar</button>
 
          </div>
     </form>

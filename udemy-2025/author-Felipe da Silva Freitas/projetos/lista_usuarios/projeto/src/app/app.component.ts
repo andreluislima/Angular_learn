@@ -29,7 +29,7 @@ export class AppComponent implements OnInit{
     setTimeout(() => {
       console.log('OnInit carregado como teste')
       this.usersList = UsersList;
-    },3000)
+    },1000)
   }
  
 }

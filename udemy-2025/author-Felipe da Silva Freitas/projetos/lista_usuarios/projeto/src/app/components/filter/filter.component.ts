@@ -5,7 +5,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {provideNativeDateAdapter} from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
-
+import { IFilterOpions } from '../../interfaces/user/filter-options.interface';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-filter',
@@ -14,7 +15,8 @@ import {MatButtonModule} from '@angular/material/button';
             MatInputModule,
             MatDatepickerModule,
             MatSelectModule,
-            MatButtonModule
+            MatButtonModule,
+            FormsModule
           ],
 
   templateUrl: './filter.component.html',
@@ -24,11 +26,23 @@ import {MatButtonModule} from '@angular/material/button';
 })
 export class FilterComponent {
 
-  foods = [
-    {
-      value:"Teste",
-      viewValue:'Teste'
-    }
-  ]
-   
+  filterOpions:IFilterOpions = {
+    name: undefined,
+    startDate:undefined,
+    endDate:undefined,
+    status:undefined
+  }
+
+  statusList = [
+    {description: 'Ativo', value:true},
+    {description: 'Inativo', value:false}
+  ];
+
+  onFilter(){
+    console.log(this.filterOpions);
+  }
+
+  dateSelected(date:any){
+    console.log(date);
+  }
 }
