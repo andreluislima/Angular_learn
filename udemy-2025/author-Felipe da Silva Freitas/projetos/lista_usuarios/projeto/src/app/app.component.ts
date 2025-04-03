@@ -6,6 +6,7 @@ import { FilterComponent } from "./components/filter/filter.component";
 import { UsersListComponent } from "./components/users-list/users-list.component";
 import { IUser } from './interfaces/user/user.interface';
 import { UsersList } from './data/users-list';
+import { IFilterOpions } from './interfaces/user/filter-options.interface';
    
 @Component({
   selector: 'app-root',
@@ -30,6 +31,10 @@ export class AppComponent implements OnInit{
       console.log('OnInit carregado como teste')
       this.usersList = UsersList;
     },1000)
+  }
+
+  onFilter(filterOpions:IFilterOpions){
+    console.log(filterOpions)
   }
  
 }

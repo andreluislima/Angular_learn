@@ -1,4 +1,4 @@
-import {Component,ChangeDetectionStrategy} from '@angular/core';
+import {Component,ChangeDetectionStrategy, Output, EventEmitter} from '@angular/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
@@ -38,11 +38,17 @@ export class FilterComponent {
     {description: 'Inativo', value:false}
   ];
 
+  @Output('onFilter') onFilterEmitt = new EventEmitter<IFilterOpions>();
+
+
   onFilter(){
+    this.onFilterEmitt.emit(this.filterOpions);
+
     console.log(this.filterOpions);
   }
 
-  dateSelected(date:any){
-    console.log(date);
-  }
+
+  // dateSelected(date:any){
+  //   console.log(date);
+  // }
 }
