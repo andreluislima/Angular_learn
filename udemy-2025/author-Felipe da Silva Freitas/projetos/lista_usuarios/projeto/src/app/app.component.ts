@@ -45,9 +45,11 @@ export class AppComponent implements OnInit{
   filterUsersList(filterOpions: IFilterOpions, usersList: IUser[]): IUser[] {
      let filteredList: IUser[] = [];
      filteredList = this.filterUsersListByName(filterOpions.name, usersList);
+     filteredList = this.filterUsersListByStatus(filterOpions.status, filteredList);
      return filteredList;
   }
-  
+
+
   filterUsersListByName(name: string | undefined, usersList: IUser[]): IUser[] {
      const NAME_NOT_TYPPED = name === undefined;
 
@@ -62,6 +64,19 @@ export class AppComponent implements OnInit{
     //  console.log(filteredList);
      return filteredList;
   }
+
+  filterUsersListByStatus(status: boolean | undefined, usersList:IUser[]):IUser[]{
+    const STATUS_NOT_SELECTED = status === undefined;
+
+    if(STATUS_NOT_SELECTED){
+      return usersList;
+    }
+
+    const filteredList = usersList.filter((user)=>user.ativo === status);
+    return filteredList;
+  
+  }
+
 
 
 }
