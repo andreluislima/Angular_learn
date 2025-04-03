@@ -7,6 +7,9 @@ import { UsersListComponent } from "./components/users-list/users-list.component
 import { IUser } from './interfaces/user/user.interface';
 import { UsersList } from './data/users-list';
 import { IFilterOpions } from './interfaces/user/filter-options.interface';
+
+import { formatDistance, isWithinInterval, subDays } from "date-fns";
+
    
 @Component({
   selector: 'app-root',
@@ -45,10 +48,31 @@ export class AppComponent implements OnInit{
   filterUsersList(filterOpions: IFilterOpions, usersList: IUser[]): IUser[] {
      let filteredList: IUser[] = [];
      filteredList = this.filterUsersListByName(filterOpions.name, usersList);
+
      filteredList = this.filterUsersListByStatus(filterOpions.status, filteredList);
+
+     filteredList = this.filterUsersListByDate(filterOpions.startDate, filterOpions.endDate, filteredList);
+
      return filteredList;
   }
+  filterUsersListByDate(startDate: Date | undefined, endDate: Date | undefined, usersList: IUser[]): IUser[] {
+     const DATES_NOT_SELECTED = startDate === undefined || endDate === undefined;
 
+     if(DATES_NOT_SELECTED){
+      return usersList;
+     }
+
+    //  const checkDateInterval
+
+     const listFiltered = usersList.filter((user)=> isWithinInterval(new Date(user.dataCadastro),{
+      start:startDate,
+      end:endDate
+     }));
+
+     return listFiltered;
+
+
+  }
 
   filterUsersListByName(name: string | undefined, usersList: IUser[]): IUser[] {
      const NAME_NOT_TYPPED = name === undefined;
