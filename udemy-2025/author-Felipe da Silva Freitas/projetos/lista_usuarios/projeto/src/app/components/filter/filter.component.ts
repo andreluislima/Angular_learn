@@ -43,12 +43,11 @@ export class FilterComponent {
 
   onFilter(){
     this.onFilterEmitt.emit(this.filterOpions);
-
-    console.log(this.filterOpions);
+    // console.log(this.filterOpions);
   }
 
 
-  // dateSelected(date:any){
-  //   console.log(date);
-  // }
+  dateSelected(date:any){
+    console.log(date);
+  }
 }

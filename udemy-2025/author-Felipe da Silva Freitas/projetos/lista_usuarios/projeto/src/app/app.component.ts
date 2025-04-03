@@ -18,7 +18,9 @@ export class AppComponent implements OnInit{
  
    userSelected:IUser = {} as IUser; // Preve que o objeto pode vir vazio.
    showUserDetails:boolean = false;
-   usersList:IUser[] = [];
+   usersList:IUser[] = []; // Lista original que vem da 'chamada http'
+   userListFiltered:IUser[] = []; // Lista filtrada
+
 
    onUserSelected(user: IUser){
     this.userSelected = user;
@@ -30,11 +32,41 @@ export class AppComponent implements OnInit{
     setTimeout(() => {
       console.log('OnInit carregado como teste')
       this.usersList = UsersList;
-    },1000)
+      this.userListFiltered = UsersList;
+    },1)
   }
 
   onFilter(filterOpions:IFilterOpions){
-    console.log(filterOpions)
+    this.userListFiltered = this.filterUsersList(filterOpions, this.usersList)
+    // console.log(filterOpions)
   }
- 
+
+  
+  filterUsersList(filterOpions: IFilterOpions, usersList: IUser[]): IUser[] {
+     let filteredList: IUser[] = [];
+     filteredList = this.filterUsersListByName(filterOpions.name, usersList);
+     return filteredList;
+  }
+  
+  filterUsersListByName(name: string | undefined, usersList: IUser[]): IUser[] {
+     const NAME_NOT_TYPPED = name === undefined;
+
+     // Se o nome for undefined, se nao houver nada no nome...
+     if(NAME_NOT_TYPPED){
+      return usersList;
+     }
+
+     //Logica de filtro
+     const filteredList = usersList.filter((user)=> user.nome.toLowerCase().includes(name.toLowerCase()));
+
+    //  console.log(filteredList);
+     return filteredList;
+  }
+
+
 }
+
+/* NOTAS */
+
+  // Quando criar um metodo crie um metodo puro, que recebe os mesmos inputs, faça o mesmo processamento, e retorne
+  // sempre o mesmo tipo de output e nao fique alterando propriedades externas na classe.
