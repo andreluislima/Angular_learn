@@ -8,7 +8,7 @@ export const UsersList:IUser[] = [
         telefone: "21988882123",
         email: "joaosilva@ig.com.br",
         cpf: "14233392112",
-        cnpj: "",
+        cnpj: "12345678000190",
         cnh: "RJ12345678",
         endereco: {
             rua: "Rua das Acácias",
