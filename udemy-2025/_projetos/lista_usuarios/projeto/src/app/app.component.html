@@ -7,12 +7,15 @@
         <main class="main-div">
             <div class="left-div">
                 <!-- lista -->
-                 <app-main-list></app-main-list>
+                 <app-main-list (userSelected)="onUserSelected($event)"></app-main-list>
+                 <!-- Sinal de OUTPUT! Que são os ()
+                 Esse usuario selecionado vem na variavel '$event' 
+                 -->
             </div>
      
             <div class="right-div">
                 <!-- detalhes  -->
-                 <app-users-details [user]="userSelected"></app-users-details>
+                 <app-users-details [user]="userSelected" *ngIf="showUsersDetails"></app-users-details>
             </div>
         </main>
      
