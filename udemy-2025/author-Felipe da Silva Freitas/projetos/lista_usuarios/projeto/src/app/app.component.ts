@@ -14,6 +14,7 @@ import { filterUsersList } from './utils/filter-users-list';
 @Component({
   selector: 'app-root',
   imports: [UserDetailsComponent, FilterComponent, UsersListComponent,CommonModule],
+  standalone:true,
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

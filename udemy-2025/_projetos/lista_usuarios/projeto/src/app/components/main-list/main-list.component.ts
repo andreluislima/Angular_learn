@@ -13,7 +13,9 @@ import { UsersList } from '../../../data/users-list';
 })
 export class MainListComponent {
   displayedColumns: string[] = ['nome', 'tipoServico', 'cpf', 'telefone', 'email', 'situacao'];
-  usersList:IUser[] = UsersList;
+  // usersList:IUser[] = UsersList; || -- dado 'chumbado', pois vem de dados de  uma lista fixa no codigo.
+  
+  @Input({required:true}) usersList:IUser[] = [];
 
   @Output('userSelected')userSelectedEmiit = new EventEmitter<IUser>();
 
