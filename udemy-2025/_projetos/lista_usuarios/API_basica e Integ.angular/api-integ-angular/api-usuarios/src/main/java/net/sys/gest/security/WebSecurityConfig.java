@@ -19,6 +19,7 @@ public class WebSecurityConfig {
                 .requestMatchers("/usuarios/saveUsuario").permitAll() // permite o endpoint sem autenticação
                 .requestMatchers("/usuarios/getAllUsuarios").permitAll() // permite o endpoint sem autenticação
                 .requestMatchers("/usuarios/findUsuarioById/**").permitAll() // permite o endpoint sem autenticação
+                .requestMatchers("/api/usuarios/**").permitAll()
                 .anyRequest().authenticated() // qualquer outro endpoint requer autenticação
             );
         return http.build();
