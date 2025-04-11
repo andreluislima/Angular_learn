@@ -5,10 +5,11 @@ import { IUser } from '../interfaces/user/user.interface';
 import { CommonModule } from '@angular/common';
 import { UsersList } from '../data/users-list';
 import { UsuarioServiceTsService } from './services/usuario.service.ts.service';
+import { FilterListComponent } from "./components/filter-list/filter-list.component";
 
 @Component({
   selector: 'app-root',
-  imports: [MainListComponent, UsersDetailsComponent,CommonModule],
+  imports: [MainListComponent, UsersDetailsComponent, CommonModule, FilterListComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
