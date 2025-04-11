@@ -2,17 +2,27 @@
     <div class="form">
           <mat-form-field>
             <mat-label>Nome:</mat-label>
-            <input matInput>
+            <input matInput [(ngModel)]="filterOptions.nome"> 
+            <!-- O valor digitado nesse input vai ser alocado no 'nome' -->
           </mat-form-field>
 
           <mat-form-field>
-            <mat-label>Função</mat-label>
-            <mat-select>
-              <mat-option value="one">First option</mat-option>
-              <mat-option value="two">Second option</mat-option>
+            <mat-label>Email:</mat-label>
+            <input matInput [(ngModel)]="filterOptions.email">
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Função:</mat-label>
+            <input matInput [(ngModel)]="filterOptions.funcao">
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Status</mat-label>
+            <mat-select [(ngModel)]="filterOptions.status">
+              <mat-option *ngFor="let status of statusList" [value]="status.value">{{status.description}}</mat-option>
             </mat-select>
           </mat-form-field>
 
-          <button class="btn btn-primary">Filtrar</button>
+          <button class="btn btn-primary" (click)="onFilter()">Filtrar</button>
     </div>
 </div>
