@@ -11,7 +11,10 @@
         <main class="main-div">
             <div class="left-div">
                 <!-- lista -->
-                 <app-main-list [usersList]="usersList" (userSelected)="onUserSelected($event)"></app-main-list>
+                 <app-main-list [usersList]="listaFiltrada" (userSelected)="onUserSelected($event)"></app-main-list>
+                 <!-- <app-main-list [usersList]="usersList" (userSelected)="onUserSelected($event)"></app-main-list> -->
+
+                 <!-- listaFilrada -->
                  <!-- Sinal de OUTPUT! Que são os ()
                  Esse usuario selecionado vem na variavel '$event' 
                  -->

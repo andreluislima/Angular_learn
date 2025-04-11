@@ -20,6 +20,7 @@ export class AppComponent implements OnInit {
   userSelected:IUser = {} as IUser;
   showUsersDetails:boolean = false; // Começa como false pq inicialmente nao quero exibir os detalhes.
   usersList:IUser[] = [];
+  listaFiltrada:IUser[] = [];
 
   constructor(private usuarioService:UsuarioServiceTsService){}
    
@@ -30,19 +31,47 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(){
-  //   setTimeout(()=>{
-  //     console.log('Dados carregados com sucesso')
-  //     this.usersList = UsersList;
-  //   }, 1000)
-  // }
 
-  this.usuarioService.getUsuarios().subscribe(users =>{
+    this.usuarioService.getUsuarios().subscribe(users =>{
     this.usersList = users;
+    this.listaFiltrada = users;
     console.log('Dados carregados com sucesso!');
+
+        /* Antigo
+          setTimeout(()=>{
+           console.log('Dados carregados com sucesso')
+           this.usersList = UsersList;
+         }, 1000)
+       }*/
+
   })};
 
   filtro(filterOptions:IFilterOptions){
     console.log(filterOptions);
+    this.listaFiltrada = this.usuariosFiltrados(filterOptions, this.usersList); 
+    // vai receber o retorno do metodo 'usuariosFiltrados' que vai ser o método que vai executar a logica de filtro e retornar a lista filtrada.
+
+  }
+
+  usuariosFiltrados(filterOptions: IFilterOptions, usersList: IUser[]): IUser[] {
+     let listaFiltrada:IUser[] = [];
+     
+     listaFiltrada = this.usuariosFiltradosByName(filterOptions.nome, usersList);
+
+
+     return listaFiltrada;
+  }
+  usuariosFiltradosByName(nome: string | undefined, usersList: IUser[]): IUser[] {
+
+     const NOME_VAZIO = nome === undefined;
+     
+     if(NOME_VAZIO){
+      return usersList;
+     }
+
+     const listaFiltrada = usersList.filter((user) => user.nome.toLowerCase().includes(nome.toLowerCase()));
+
+     return listaFiltrada;
   }
 
   
