@@ -2,7 +2,10 @@
     
          <header class="top-div">
             <!-- filtro -->
-             <app-filter-list></app-filter-list>
+             <app-filter-list (onFilter)="filtro($event)"></app-filter-list>
+             <!-- Lembre-se:
+             O app pai, esse aqui, está recebendo do app filho um output 
+             -->
         </header>
         
         <main class="main-div">

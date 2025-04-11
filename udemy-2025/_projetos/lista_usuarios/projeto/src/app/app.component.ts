@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { UsersList } from '../data/users-list';
 import { UsuarioServiceTsService } from './services/usuario.service.ts.service';
 import { FilterListComponent } from "./components/filter-list/filter-list.component";
+import { IFilterOptions } from '../interfaces/user/filter-options.interface';
 
 @Component({
   selector: 'app-root',
@@ -38,8 +39,13 @@ export class AppComponent implements OnInit {
   this.usuarioService.getUsuarios().subscribe(users =>{
     this.usersList = users;
     console.log('Dados carregados com sucesso!');
-  });
+  })};
 
+  filtro(filterOptions:IFilterOptions){
+    console.log(filterOptions);
+  }
+
+  
 }
 
-}
+

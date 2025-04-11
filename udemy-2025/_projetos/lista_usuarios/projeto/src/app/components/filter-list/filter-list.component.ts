@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import {IFilterOptions } from '../../../interfaces/user/filter-options.interface';
@@ -32,8 +32,11 @@ export class FilterListComponent {
     {description:'Inativo', value:false}
    ];
 
+   @Output('onFilter') onFilterEmitt = new EventEmitter<IFilterOptions>(); // Será enviado (outPut) ao elemento Pai (app.component)
+
    onFilter(){
-    console.log(this.filterOptions);
+    this.onFilterEmitt.emit(this.filterOptions);
+    // console.log(this.filterOptions);
    }
 
 }
