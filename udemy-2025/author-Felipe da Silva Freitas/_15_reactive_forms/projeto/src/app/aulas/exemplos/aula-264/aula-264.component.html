@@ -1,0 +1,6 @@
+<div>
+    <label for="name">Nome:</label>
+    <input class="mx-2" type="text" id="name" [formControl]="nome" />
+    <p>Valor: {{nome.value}}</p>
+    <button class="btn btn-secondary" (click)="mostrarStatus()">Mostrar Status</button>
+</div>
