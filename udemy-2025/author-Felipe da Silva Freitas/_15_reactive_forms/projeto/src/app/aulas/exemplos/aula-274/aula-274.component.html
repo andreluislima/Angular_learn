@@ -1,0 +1,17 @@
+<section>
+    <hr>
+    <div class="mt-2">
+        
+        <h5>VALIDADORES ASSÍNCRONOS</h5>
+        <label for="name">Nome:</label>
+        <input class="mx-2" type="text" id="name" [formControl]="nome"/>
+        
+        <div>
+            <p style="color: orange;">Validando...</p>
+            <p style="color:green">Usuario Existente.</p>
+            <p style="color: red;">Usuário Inexistente.</p>
+        </div>
+        
+        <p>Válido: {{nome.valid}}</p>
+    </div>
+</section>

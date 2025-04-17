@@ -3,13 +3,13 @@ import { FormControl, FormsModule, ReactiveFormsModule, Validators } from '@angu
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-aula-270',
+  selector: 'app-aula-274',
   imports: [FormsModule, ReactiveFormsModule,CommonModule],
-  templateUrl: './aula-270.component.html',
-  styleUrl: './aula-270.component.scss'
+  templateUrl: './aula-274.component.html',
+  styleUrl: './aula-274.component.scss'
 })
-export class Aula270Component {
-  nome = new FormControl('Inicial', [Validators.required, Validators.minLength(6), Validators.maxLength(8)]);
+export class Aula274Component {
+  nome = new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(8)]);
 
   mostrarStatus() {
     console.log(this.nome)
@@ -17,5 +17,4 @@ export class Aula270Component {
   resetar(){
     this.nome.reset();
   }
-
 }

@@ -11,6 +11,7 @@
         <div style="color:red">
             <span *ngIf="nome.hasError('required')">O campo nome é obrigatório</span>
             <span *ngIf="nome.hasError('minlength')&& !nome.hasError('required')">É necessário no mínimo 6 caracteres</span>
+            <span *ngIf="nome.hasError('maxlength') && !nome.hasError('required')">É necessário no máximo 8 caracteres.</span>
         </div>
 
         <button class="btn btn-outline-primary" (click)="mostrarStatus()">Mostrar Status</button>
