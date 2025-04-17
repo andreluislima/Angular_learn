@@ -11,7 +11,6 @@ export class Aula266Component {
 
   nome = new FormControl({value:'', disabled:true}, [Validators.required]);
 
-
   desabilitar(){
     this.nome.disable();
   }
