@@ -8,11 +8,11 @@ import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
   styleUrl: './aula-264.component.scss'
 })
 export class Aula263Component {
+nome = new FormControl('valor inicial');
+
 
 mostrarStatus() {
   console.log(this.nome)
 }
-
-  nome = new FormControl('valor inicial');
 
 }

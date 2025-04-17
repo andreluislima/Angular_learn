@@ -1,0 +1,11 @@
+<section>
+    <hr>
+    <div class="mt-2">
+        <label for="name">Nome:</label>
+        <input class="mx-2" type="text" id="name" [formControl]="nome" (input)="inputAlterado()" />
+        <p>Valor: {{nome.value}}</p>
+        <button class="btn btn-outline-secondary" (click)="mostrarStatus()">Mostrar Status</button>
+        <button class="btn btn-outline-secondary" (click)="alterarValor()">Alterar Valor</button>
+
+    </div>
+</section>
