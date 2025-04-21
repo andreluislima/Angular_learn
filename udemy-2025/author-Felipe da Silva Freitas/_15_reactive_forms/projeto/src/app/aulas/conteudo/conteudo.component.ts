@@ -5,7 +5,7 @@ import { Aula266Component } from "../exemplos/aula-266/aula-266.component";
 import { Aula267Component } from "../exemplos/aula-267/aula-267.component";
 import { Aula268Component } from "../exemplos/aula-268/aula-268.component";
 import { Aula270Component } from "../exemplos/aula-270/aula-270.component";
-import { Aula274Component } from "../exemplos/aula-274/aula-274.component";
+import { Aula274Component } from "../exemplos/aula-274-validador-assincrono/aula-274.component";
  
  @Component({
   selector: 'app-conteudo',
