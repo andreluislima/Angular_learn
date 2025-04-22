@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { AbstractControl, AsyncValidator, ValidationErrors } from "@angular/forms";
-import { map, Observable } from "rxjs";
+import { delay, map, Observable, of } from "rxjs";
 import { UsersService } from "./Users.service";
 
 
@@ -16,7 +16,12 @@ export class UserValidatorService implements AsyncValidator{
     ){}
 
     validate(control: AbstractControl): Promise<ValidationErrors | null> | Observable<ValidationErrors | null> {
+
+        if(!control.dirty){
+            return of(null);
+        }
          return this._usersService.getUsers().pipe(
+            delay(3000),
             // Será dentro do 'map' que será feita a logica de verificao do nome.
             map((usersList)=>{
                 const hasUser = usersList.find((user) => user.name.toLowerCase()=== control.value.trim().toLowerCase());
