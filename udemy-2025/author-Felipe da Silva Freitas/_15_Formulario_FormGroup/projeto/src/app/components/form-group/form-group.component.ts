@@ -21,4 +21,10 @@ export class FormGroupComponent {
   mostrarValue() {
     console.log(this.pessoaForm.value);
   }
+
+  onFormSubmit() {
+    console.log('Enviado')
+    console.log(this.pessoaForm.value);
+  }
+    
 }

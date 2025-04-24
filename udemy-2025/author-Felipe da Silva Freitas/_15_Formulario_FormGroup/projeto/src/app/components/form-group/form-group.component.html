@@ -1,5 +1,5 @@
 
-<form action="" [formGroup]="pessoaForm">
+<form action="" [formGroup]="pessoaForm" (ngSubmit)="onFormSubmit()">
     <div class="mt-2">
         <label for="">Nome:</label>
         <input type="text" id="name" formControlName="nome">
