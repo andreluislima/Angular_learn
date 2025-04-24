@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Aula274Component } from './aula-274.component';
+import { FormGroupComponent } from './form-group.component';
 
-describe('Aula274Component', () => {
-  let component: Aula274Component;
-  let fixture: ComponentFixture<Aula274Component>;
+describe('FormGroupComponent', () => {
+  let component: FormGroupComponent;
+  let fixture: ComponentFixture<FormGroupComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Aula274Component]
+      imports: [FormGroupComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Aula274Component);
+    fixture = TestBed.createComponent(FormGroupComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

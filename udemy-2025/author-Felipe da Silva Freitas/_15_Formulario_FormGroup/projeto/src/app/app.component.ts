@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { ConteudoComponent } from "./aulas/conteudo/conteudo.component";
+import { FormGroupComponent } from "./components/form-group/form-group.component";
     
 @Component({
   selector: 'app-root',
-  imports: [ConteudoComponent],
+  imports: [FormGroupComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
