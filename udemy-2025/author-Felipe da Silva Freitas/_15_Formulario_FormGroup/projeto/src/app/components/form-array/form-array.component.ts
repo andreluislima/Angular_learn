@@ -9,6 +9,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './form-array.component.scss'
 })
 export class FormArrayComponent {
+
   musicasForm = new FormGroup({
     musicas: new FormArray([
       new FormControl('', [Validators.required])
@@ -22,5 +23,15 @@ export class FormArrayComponent {
   get musicas():FormArray{
     return this.musicasForm.get('musicas') as FormArray;
   }
+
+  adicionarMusica() {
+    this.musicas.push( new FormControl('Novo', [Validators.required]))
+  }
+
+  removerMusica(musicaIndex:number) {
+    this.musicas.removeAt(musicaIndex);
+  }
+
+ 
 
 }
