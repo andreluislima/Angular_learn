@@ -1,0 +1,34 @@
+<div class="container">
+    
+         <header class="top-div">
+            <!-- filtro -->
+             <app-filter-list (onFilter)="filtro($event)"></app-filter-list>
+             <!-- Lembre-se:
+             O app pai, esse aqui, está recebendo do app filho um output 
+             -->
+        </header>
+        
+        <main class="main-div">
+            <div class="left-div">
+                <!-- lista -->
+                 <app-main-list [usersList]="listaFiltrada" (userSelected)="onUserSelected($event)"></app-main-list>
+                 <!-- <app-main-list [usersList]="usersList" (userSelected)="onUserSelected($event)"></app-main-list> -->
+
+                 <!-- listaFilrada -->
+                 <!-- Sinal de OUTPUT! Que são os ()
+                 Esse usuario selecionado vem na variavel '$event' 
+                 -->
+            </div>
+     
+            <div class="right-div">
+                <!-- detalhes  -->
+                 <app-users-details [user]="userSelected" *ngIf="showUsersDetails"></app-users-details>
+            </div>
+        </main>
+     
+      
+  
+</div>
+
+
+ 

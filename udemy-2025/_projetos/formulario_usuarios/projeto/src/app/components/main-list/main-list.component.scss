@@ -1,0 +1,12 @@
+.users-list{
+    width: 100%;
+
+    .table{
+        background-color: #fff;
+        width: 100%;
+    }
+
+    &__item{
+        cursor: pointer;
+    }
+}
