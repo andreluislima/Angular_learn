@@ -1,0 +1,15 @@
+<form class="mt-2 p-4" style="border: 2px solid; background-color: rgb(215, 214, 216);" action="" [formGroup]="pessoaForm">
+    <div>
+        <input type="text" placeholder="Senha" formControlName="senha">
+    </div>
+    <div>
+        <input type="email" placeholder="Confirmação de Senha" formControlName="confirmacaoSenha">
+    </div>
+    <p *ngIf="pessoaForm.get('confirmacaoSenha')?.hasError('invalidPassword')">Confirmação de senha Inválida</p>
+
+    <button (click)="mostrarForm()">Mostrar Form</button>
+
+    <p>Pessoa form Válido: {{pessoaForm.valid}}</p>
+    <p>Confirmação Senha Válido: {{pessoaForm.get('confirmacaoSenha')?.valid}}</p>
+     
+</form>

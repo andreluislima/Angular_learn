@@ -11,6 +11,7 @@ import {ReactiveFormsModule, FormControl, FormGroup, Validators } from '@angular
 export class MarkAsTouchedComponent implements OnInit {
 
 
+
   pessoaForm = new FormGroup({
     nome: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required])
@@ -23,5 +24,10 @@ export class MarkAsTouchedComponent implements OnInit {
       console.log('Touched EmailControl', this.pessoaForm.get('email')?.touched);
 
      },4000)
+  }
+
+  markNomeAsTouched() {
+    console.log('markAllAsTouched')
+    this.pessoaForm.get('nome')?.markAllAsTouched();
   }
 }
