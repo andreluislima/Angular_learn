@@ -1,5 +1,8 @@
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
+import { MaritalStatusEnum } from "../enums/marital-status.enum";
+import { PhoneListEnum } from "../enums/phone-list.enum";
+import { AdressListEnum } from "../enums/address-list.enum";
 
 @Injectable({
     providedIn:'root'
@@ -11,24 +14,26 @@ export class UsersService{
             email: 'mario@hotmail.com',
             country: 'Brazil',
             state: 'São Paulo',
-            maritalStatus: 1, // -> Estado Civil // -> Solteiro
+            // maritalStatus: 1, // -> Estado Civil // -> Solteiro
+            maritalStatus: MaritalStatusEnum.SINGLE,
             monthlyIncome: 5000, // -> Renda Mensal
             birthDate: '25/02/1991',
             phoneList: [
                 {
-                    type: 1, // -> Residencial
+                    // type: 1, // -> Residencial
+                    type:PhoneListEnum.RESIDENCE,
                     areaCode: '11', // -> DDD
                     internationalCode: '+55', // -> DDI
                     number: '1234-5678', // -> Número
                 },
                 {
-                    type: 2, // -> Celular
+                    type: PhoneListEnum.MOBILE,
                     areaCode: '11', // -> DDD
                     internationalCode: '+55', // -> DDI
                     number: '91111-2222', // -> Número
                 },
                 {
-                     type: 3, // -> Emergência
+                     type: PhoneListEnum.EMERGENCY,
                      areaCode: '11', // -> DDD
                      internationalCode: '+55', // -> DDI
                      number: '93333-4444', // -> Número
@@ -36,7 +41,8 @@ export class UsersService{
             ],
             addressList: [
                 {
-                    type: 1, // -> Residencial
+                    // type: 1, // -> Residencial
+                    type:AdressListEnum.RESIDENCE,
                     street: 'Rua de Tal',
                     complement: 'Próximo ao parque',
                     country: 'Brazil',
@@ -44,15 +50,15 @@ export class UsersService{
                     city: 'Ribeirão Preto',
                 },
                 {
-                     type: 2, // -> Trabalho
-                     street: 'Avenida de Tal',
-                     complement: 'Próximo ao centro comercial',
-                     country: 'Brazil',
-                     state: 'São Paulo',
-                     city: 'Santos',
+                    type:AdressListEnum.WORK,
+                    street: 'Avenida de Tal',
+                    complement: 'Próximo ao centro comercial',
+                    country: 'Brazil',
+                    state: 'São Paulo',
+                    city: 'Santos',
                 },
                 {
-                    type: 3, // -> Alternativo
+                    type: AdressListEnum.ALTERNATIVE,
                     street: 'Estrada de Tal',
                     complement: 'Próximo ao shopping',
                     country: 'Brazil',
@@ -78,12 +84,12 @@ export class UsersService{
             email: 'laura@hotmail.com',
             country: 'Brazil',
             state: 'São Paulo',
-            maritalStatus: 2, // -> Estado Civil // -> Casada
+            maritalStatus: MaritalStatusEnum.MARRIED,
             monthlyIncome: 6000, // -> Renda Mensal
             birthDate: '12/12/1994',
             phoneList: [
                 {
-                    type: 3, // -> Emergência
+                    type: PhoneListEnum.EMERGENCY,
                     areaCode: '11', // -> DDD
                     internationalCode: '+55', // -> DDI
                     number: '93333-7777', // -> Número
@@ -91,7 +97,7 @@ export class UsersService{
             ],
             addressList: [
                 {
-                    type: 2, // -> Trabalho
+                    type: AdressListEnum.WORK,
                     street: 'Avenida de Tal',
                     complement: 'Próximo ao centro comercial',
                     country: 'Brazil',
@@ -112,12 +118,12 @@ export class UsersService{
             email: 'marcos@hotmail.com',
             country: 'Brazil',
             state: 'São Paulo',
-            maritalStatus: 3, // -> Estado Civil // -> Divorciado
+            maritalStatus: MaritalStatusEnum.DIVORCED,
             monthlyIncome: 7000, // -> Renda Mensal
             birthDate: '11/11/1991',
             phoneList: [
                 {
-                    type: 2, // -> Celular
+                    type:PhoneListEnum.MOBILE,
                     areaCode: '11', // -> DDD
                     internationalCode: '+55', // -> DDI
                     number: '91111-7777', // -> Número
@@ -125,7 +131,7 @@ export class UsersService{
             ],
             addressList: [
                 {
-                    type: 3, // -> Alternativo
+                    type: AdressListEnum.ALTERNATIVE,
                     street: 'Estrada de Tal',
                     complement: 'Próximo ao shopping',
                     country: 'Brazil',
