@@ -3,12 +3,13 @@ import { Observable } from "rxjs";
 import { MaritalStatusEnum } from "../enums/marital-status.enum";
 import { PhoneListEnum } from "../enums/phone-list.enum";
 import { AdressListEnum } from "../enums/address-list.enum";
+import { Iuser } from "../interfaces/user/IUser.interface";
 
 @Injectable({
     providedIn:'root'
 })
 export class UsersService{
-    private readonly usersList: any[] = [
+    private readonly usersList: Iuser[] = [
         {
             name: 'Mario de Pas Almeida',
             email: 'mario@hotmail.com',
