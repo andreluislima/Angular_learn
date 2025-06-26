@@ -1,0 +1,22 @@
+<section class="container-fluid">
+  <div class="main">
+    <form #form="ngForm" class="form" (ngSubmit)="submitForm()">
+      <label for="" class="fw-bold">Nome:</label>
+      <input type="text" name="nome" [(ngModel)]="nome" required #nomeInput="ngModel" />
+
+      <!-- error msg -->
+      <div *ngIf="nomeInput.invalid && nomeInput.touched" style="color:red">
+        Nome é obrigatório!
+      </div>
+
+      <label for="" class="fw-bold">Telefone</label>
+      <input type="text" name="telefone" [(ngModel)]="telefone" required #telInput="ngModel" />
+
+      <div *ngIf="telInput.invalid && telInput.touched" style="color:red">
+        Telefone é obrigatório!
+      </div>
+
+      <button type="submit" [disabled]="form.invalid">Enviar</button>
+    </form>
+  </div>
+</section>
